@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+p{
+	margin-top: 5px;
+	text-align: center;
+}
+.flex-container {
+	display: flex;
+	flex-direction: column;
+}
+.feel_color {
+	margin-top: 50px;
+	margin-left: 50px;
+	border: 2px solid #333333;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+}
+.row{
+	display: flex;
+	justify-content: space-evenly;
+}
+.area {
+	border: 2px solid #333333;
+	width: 440px;
+	height: 480px;
+}
+.new-square {
+	display: inline-block;
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	cursor: move;
+	touch-action: none;
+}
