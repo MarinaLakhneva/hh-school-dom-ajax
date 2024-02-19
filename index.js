@@ -25,12 +25,11 @@ square.addEventListener('pointerdown', (e) => {
 		document.removeEventListener('pointermove', position);
 		let mesh = document.getElementById("mesh").getBoundingClientRect();
 		let freedom = document.getElementById("freedom").getBoundingClientRect();
-		if ((e.pageX > mesh.left && e.pageX < mesh.right) &&
-				(e.pageY > mesh.top && e.pageY < mesh.bottom)) {
+		if ((e.pageX > mesh.left && e.pageX < mesh.right) && (e.pageY > mesh.top && e.pageY < mesh.bottom)) {
 			newElement.style.position = 'static';
 			document.getElementById("mesh").append(newElement);
-		} else if ((e.pageX > freedom.left && e.pageX < freedom.right) &&
-							 (e.pageY > freedom.top && e.pageY < freedom.bottom)) {
+		} else if ((e.pageX > freedom.left && e.pageX < freedom.right) && (e.pageY > freedom.top && e.pageY < freedom.bottom)) {
+			position(e)
 			document.getElementById("freedom").append(newElement);
 		}
 		else {

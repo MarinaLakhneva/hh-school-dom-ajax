@@ -27,6 +27,9 @@ p{
 	width: 440px;
 	height: 480px;
 }
+#freedom{
+	position: relative;
+}
 .new-square {
 	display: inline-block;
 	margin: 5px;
