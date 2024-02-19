@@ -16,11 +16,24 @@ square.addEventListener('pointerdown', (e) => {
 	newElement.style.background = getRandomColor();
 	newElement.className = "new-square";
 	document.body.append(newElement);
+	
+	function getCoords(elem) { // кроме IE8-
+		let box = elem.getBoundingClientRect();
+		return {
+			top: box.top + pageYOffset,
+			left: box.left + pageXOffset
+		};
+	}
+	
+	let shiftX = e.pageX - getCoords(square).left;
+	let shiftY = e.pageY - getCoords(square).top;
+	
 	function position(e) {
-		newElement.style.left = e.pageX - newElement.offsetWidth / 2 + 'px';
-		newElement.style.top = e.pageY - newElement.offsetHeight / 2 + 'px';
+		newElement.style.left = e.pageX - shiftX + 'px';
+		newElement.style.top = e.pageY - shiftY + 'px';
 	}
 	position(e);
+	
 	document.addEventListener('pointermove', position);
 	
 	newElement.addEventListener('pointerup', (e) => {
